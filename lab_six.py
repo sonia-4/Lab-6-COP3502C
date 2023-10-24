@@ -25,9 +25,21 @@ def encode(password_encoder):
 
    return encoded
 
+def decode(encoded_password):
+    decoded_password = ''
+    for digit in encoded_password:
+        int_digit = int(digit)
+        int_digit -= 3
+        if int_digit < 0:
+            int_digit = 10 + int_digit #int digit is negative, so value is actually being subtracted from 10 to wrap back around
+        decoded_password += str(int_digit)
+    
+    return decoded_password
+
 
 
 def main():
+   encoded = ''
    while True:
        print()
        print('Menu')
@@ -44,6 +56,14 @@ def main():
            encoded = encode(password_encoder)
            print('Your password has been encoded and stored!')
            print(encoded)
+       elif user_option == 2:
+           print("Your password has been decoded! Here it is: ")
+           print(decode(encoded))
+       elif user_option == 3:
+           print("Thank you for using the decoder! Bye!")
+           break
+       else:
+           print("Invalid option. Please select 1, 2, or 3 as your option (no spaces).")
 
 
 
