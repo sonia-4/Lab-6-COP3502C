@@ -1,3 +1,4 @@
+#Sonia Alwani
 def encode(password_encoder):
    encoded = ''
    for char in password_encoder:
