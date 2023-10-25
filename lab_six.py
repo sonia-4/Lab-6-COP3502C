@@ -55,7 +55,7 @@ def main():
            password_encoder = input('Please enter your password to encode: ')
            encoded = encode(password_encoder)
            print('Your password has been encoded and stored!')
-           print(encoded)
+
        elif user_option == 2:
            print("Your password has been decoded! Here it is: ")
            print(decode(encoded))
